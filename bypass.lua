@@ -17,7 +17,7 @@ for i, v in getgc(true) do
             local Old; Old = hookfunction(Detected, function(Action, Info, NoCrash)
                 if Action ~= "_" then
                     if DEBUG then
-                        warn(`Adonis AntiCheat flagged\nMethod: {Action}\nInfo: {Info}`)
+                        warn(`AntiCheat flagged\nMethod: {Action}\nInfo: {Info}`)
                     end
                 end
                 
@@ -31,7 +31,7 @@ for i, v in getgc(true) do
             Kill = KillFunc
             local Old; Old = hookfunction(Kill, function(Info)
                 if DEBUG then
-                    warn(`Adonis AntiCheat tried to kill (fallback): {Info}`)
+                    warn(`AntiCheat tried to kill (fallback): {Info}`)
                 end
             end)
 
@@ -45,7 +45,7 @@ local Old; Old = hookfunction(getrenv().debug.info, newcclosure(function(...)
 
     if Detected and LevelOrFunc == Detected then
         if DEBUG then
-            warn(`adonis bypassed`)
+            warn(`bypassed`)
         end
 
         return coroutine.yield(coroutine.running())
@@ -55,4 +55,3 @@ local Old; Old = hookfunction(getrenv().debug.info, newcclosure(function(...)
 end))
 
 setthreadidentity(7)
-
