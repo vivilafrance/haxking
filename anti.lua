@@ -45,7 +45,7 @@ local Old; Old = hookfunction(getrenv().debug.info, newcclosure(function(...)
 
     if Detected and LevelOrFunc == Detected then
         if DEBUG then
-            warn(`zins | adonis bypassed`)
+            warn(`adonis bypassed`)
         end
 
         return coroutine.yield(coroutine.running())
@@ -55,3 +55,4 @@ local Old; Old = hookfunction(getrenv().debug.info, newcclosure(function(...)
 end))
 
 setthreadidentity(7)
+
