@@ -1,4 +1,3 @@
-
 local Hooked = {}
 local Detected, Kill
 local FoundAC = false
@@ -54,3 +53,4 @@ if getgenv().AdonisBypassEnabled then
     -- Restore thread identity
     setthreadidentity(7)
 end
+
